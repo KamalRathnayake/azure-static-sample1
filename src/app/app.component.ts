@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   public keyup(){
-    this.http.get('https://blue-mushroom-079053c00.azurestaticapps.net/api/HttpTrigger1?name=kamal').subscribe(resp=>{
+    this.http.get('https://blue-mushroom-079053c00.azurestaticapps.net/api/HttpTrigger1?name=kamal', {responseType: 'text' as const}).subscribe(resp=>{
       console.log(resp)
     })
   }
