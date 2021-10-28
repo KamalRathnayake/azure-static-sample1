@@ -10,12 +10,12 @@ export class AppComponent {
   public name: string = "";
   public result: string = ""
 
-  constructor(private http:HttpClient){
+  constructor(private http: HttpClient) {
 
   }
 
-  public keyup(){
-    this.http.get('https://blue-mushroom-079053c00.azurestaticapps.net/api/HttpTrigger1?name=kamal', {responseType: 'text'}).subscribe(resp=>{
+  public keyup() {
+    this.http.get('/api/HttpTrigger1?name=' + this.name, { responseType: 'text' }).subscribe(resp => {
       this.result = resp
     })
   }
